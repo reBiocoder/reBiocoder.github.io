@@ -88,4 +88,254 @@
     
   </entry>
   
+  <entry>
+    <title>机器学习（1）</title>
+    <link href="https://rebiocoder.github.io/2020/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89/"/>
+    <id>https://rebiocoder.github.io/2020/06/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89/</id>
+    <published>2020-06-01T02:27:00.000Z</published>
+    <updated>2021-01-05T03:50:46.474Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.监督学习</p><p>回归： 预测连续值</p><p>分类：预测离散值</p><p>2.无监督学习</p><p>聚类算法</p><p>鸡尾酒算法</p><hr><p>梯度下降</p><!-- more --><p>1.监督学习</p><p>回归： 预测连续值</p><p>分类：预测离散值</p><p>2.无监督学习</p><p>聚类算法</p><p>鸡尾酒算法</p><hr><p>梯度下降</p><p>![QOLJD78`A_BYQ_DIY_DGNWG.png](<a href="https://i.loli.net/2020/06/01/ugZyM5nDhRqdTUX.png">https://i.loli.net/2020/06/01/ugZyM5nDhRqdTUX.png</a>)</p><p>QOLJD78`A_BYQ_DIY_DGNWG.png</p><p>正确更新方式是同时更新x1和x2</p><p>计算偏导数</p><p><img src="https://i.loli.net/2020/06/01/mr3ni7wShMvR4uc.png" alt="3~O_PS3D6DF_JEAU5_NG6AY.png"></p><p>3~O_PS3D6DF_JEAU5_NG6AY.png</p><hr><p>logistics 函数</p><p>![C_CNR7D`BWNRDQI27~R_AZF.png](<a href="https://i.loli.net/2020/06/01/KG52sOlePuikzRM.png">https://i.loli.net/2020/06/01/KG52sOlePuikzRM.png</a>)</p><p>C_CNR7D`BWNRDQI27~R_AZF.png</p><p>logistics代价函数</p><p><img src="https://i.loli.net/2020/06/01/oQrBApX6wTaWz35.png" alt="I2_EVOY__ZBQVK_ST_KM_XR.png"></p><p>I2_EVOY__ZBQVK_ST_KM_XR.png</p>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.监督学习&lt;/p&gt;
+&lt;p&gt;回归： 预测连续值&lt;/p&gt;
+&lt;p&gt;分类：预测离散值&lt;/p&gt;
+&lt;p&gt;2.无监督学习&lt;/p&gt;
+&lt;p&gt;聚类算法&lt;/p&gt;
+&lt;p&gt;鸡尾酒算法&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;梯度下降&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+      
+      
+    
+    </summary>
+    
+    
+    
+    
+    <category term="机器学习" scheme="https://rebiocoder.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树中序遍历（栈）</title>
+    <link href="https://rebiocoder.github.io/2020/04/22/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E6%A0%88%EF%BC%89/"/>
+    <id>https://rebiocoder.github.io/2020/04/22/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%EF%BC%88%E6%A0%88%EF%BC%89/</id>
+    <published>2020-04-22T08:09:00.000Z</published>
+    <updated>2021-01-05T03:51:00.250Z</updated>
+    
+    <content type="html"><![CDATA[<p>leetcode94<br>问题：<br>栈的方式实现二叉树</p><p>1</p><!-- more --><p>leetcode94<br>问题：<br>栈的方式实现二叉树</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution:  </span><br><span class="line">def middelTravel(self, r):  </span><br><span class="line"> stack, ret &#x3D; \[\], \[\]  </span><br><span class="line"> root &#x3D; r  </span><br><span class="line"> while stack or root:  </span><br><span class="line"> if root:  </span><br><span class="line"> stack.append(root)  </span><br><span class="line"> root &#x3D; root.left  </span><br><span class="line"> else:  </span><br><span class="line"> s &#x3D; stack.pop()  </span><br><span class="line"> ret.append(s.val)  </span><br><span class="line"> root &#x3D; s.right  </span><br><span class="line"> return ret  </span><br></pre></td></tr></table></figure><p>关键点：<br>1.根节点先入栈，然后以左节点为根节点，直到左节点为空，将根节点出栈。 以右节点为根节点</p>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;leetcode94&lt;br&gt;问题：&lt;br&gt;栈的方式实现二叉树&lt;/p&gt;
+&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;spa
+      
+    
+    </summary>
+    
+    
+    
+    
+    <category term="算法" scheme="https://rebiocoder.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树子树</title>
+    <link href="https://rebiocoder.github.io/2020/04/22/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AD%90%E6%A0%91/"/>
+    <id>https://rebiocoder.github.io/2020/04/22/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%AD%90%E6%A0%91/</id>
+    <published>2020-04-22T07:36:00.000Z</published>
+    <updated>2021-01-05T03:51:12.762Z</updated>
+    
+    <content type="html"><![CDATA[<p>leetcode572<br>问题：判断t是否为s的子树</p><p>1</p><!-- more --><p>leetcode572<br>问题：判断t是否为s的子树</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">python解决方案  </span><br><span class="line">class TreeNode:  </span><br><span class="line">def \_\_init\_\_(self):  </span><br><span class="line"> self.val &#x3D; val  </span><br><span class="line"> self.left &#x3D; None  </span><br><span class="line"> self.right &#x3D; None  </span><br><span class="line">class Solution:  </span><br><span class="line">def isSubtitle(t,s):  </span><br><span class="line"> def up(t):  </span><br><span class="line"> return (t.val, up(t.left), up(t.right)) if t else None  </span><br><span class="line"> return str(up(t))  in str(up(s))  </span><br></pre></td></tr></table></figure><p>注意点：</p><ul><li>  元组中的元素位置不会发生变化</li><li>  print(“a” in “ab”) 返回true</li></ul>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;leetcode572&lt;br&gt;问题：判断t是否为s的子树&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span c
+      
+    
+    </summary>
+    
+    
+    
+    
+    <category term="算法" scheme="https://rebiocoder.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树右视图</title>
+    <link href="https://rebiocoder.github.io/2020/04/22/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%8F%B3%E8%A7%86%E5%9B%BE/"/>
+    <id>https://rebiocoder.github.io/2020/04/22/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%8F%B3%E8%A7%86%E5%9B%BE/</id>
+    <published>2020-04-22T06:33:00.000Z</published>
+    <updated>2021-01-05T03:51:37.986Z</updated>
+    
+    <content type="html"><![CDATA[<p>二叉树右视图（leetcode 199）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class TreeNode:  </span><br><span class="line">def \_\_init\_\_(self,x):  </span><br><span class="line"> self.val &#x3D; x  </span><br><span class="line"> self.left &#x3D; None  </span><br><span class="line"> self.right &#x3D; None  </span><br><span class="line">  </span><br><span class="line">class Solution:  </span><br><span class="line">def rightDideView(self, root: TreeNode) -&gt; List\[int\]:  </span><br><span class="line"> d &#x3D; &#123;&#125;  </span><br><span class="line"> def f(r,i):  </span><br><span class="line"> if r:  </span><br><span class="line"> d\[i\] &#x3D; r.val  </span><br><span class="line"> f(r.left, i+1)  </span><br><span class="line"> f(r.right, i+1)  </span><br><span class="line"> f(root,0)  </span><br><span class="line"> return \[\*d.values()\]  </span><br></pre></td></tr></table></figure><p>思路：</p><p>先序遍历，注意rightSideView(r-&gt;left, i+1)与rightSideView(r-right, i+1)中的i相同，由此可以知道，字典中存储的数据一定是每层的最后一个数据</p>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;二叉树右视图（leetcode 199）&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;li
+      
+    
+    </summary>
+    
+    
+    
+    
+    <category term="算法" scheme="https://rebiocoder.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UML类图</title>
+    <link href="https://rebiocoder.github.io/2020/04/16/UML%E7%B1%BB%E5%9B%BE/"/>
+    <id>https://rebiocoder.github.io/2020/04/16/UML%E7%B1%BB%E5%9B%BE/</id>
+    <published>2020-04-16T03:39:00.000Z</published>
+    <updated>2021-01-05T03:52:39.359Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>类图基本属性</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+表示public  </span><br><span class="line">\-表示private  </span><br><span class="line">#表示protected  </span><br></pre></td></tr></table></figure></li><li><p> 类与类的基本关系</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.依赖关系  </span><br><span class="line">定义：有两个元素x和y，如果修改x的定义可能会引起对y的定义的修改，则称y依赖与元素x，用带箭头的虚线表示依赖关系，箭头指向被依赖的对象。  </span><br><span class="line">  </span><br><span class="line">2.泛化关系  </span><br><span class="line">泛化关系就是子类与父类之间的继承关系。用带空心箭头的实线表示，箭头指向父类  </span><br><span class="line">  </span><br><span class="line">3.关联关系  </span><br><span class="line">关联关系可以理解为ER图中的实体关系，用实现表示，上方标识数字来进行确认。  </span><br><span class="line">  </span><br><span class="line">4.聚合关系  </span><br><span class="line">聚合关系是一种特殊的关联关系，聚合关系表示的是类之间整体与部分的关系，用带有空心菱形的实线表示，空心菱形指向代表整体的类。  </span><br><span class="line">  </span><br><span class="line">5.实现关系  </span><br><span class="line">定义接口，用户带空心箭头的虚线来表示</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;类图基本属性&lt;figure class=&quot;highlight vala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;
+      
+    
+    </summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>离散结构笔记(1)</title>
+    <link href="https://rebiocoder.github.io/2020/02/21/%E7%A6%BB%E6%95%A3%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0-1/"/>
+    <id>https://rebiocoder.github.io/2020/02/21/%E7%A6%BB%E6%95%A3%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0-1/</id>
+    <published>2020-02-21T05:37:00.000Z</published>
+    <updated>2021-01-05T03:54:15.464Z</updated>
+    
+    <content type="html"><![CDATA[<p>命题: 能判断真假的陈述句称为命题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 感叹句,祈使句,疑问句都不是命题  </span><br><span class="line">2. 悖论不是命题  </span><br><span class="line">3.判断结果不能唯一确定的不是命题  </span><br></pre></td></tr></table></figure><p>简单命题: 由一个简单陈述句组成(原子命题,不能再分)</p><p>复合命题: 简单命题 + 联结词</p><p>五种常用的联结词:否定,合取,析取,蕴涵,等价</p><p>否定: 非,并非</p><hr><p>合取</p><p>合取词: “且”</p><p><code>P 且 Q</code></p><p>当且仅当P和Q同时为真</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">P并且Q  </span><br><span class="line">不但P而且Q  </span><br><span class="line">既P又Q  </span><br><span class="line">尽管P还Q  </span><br><span class="line">虽然P但是Q  </span><br></pre></td></tr></table></figure><hr><p>析取</p><p>析取词: 或</p><p>P或Q: 为假,当且仅当P和Q同时为假</p><p>分类: 相容或,排斥或</p><hr><p>蕴涵词<br>如果.. 那么 ..</p>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;命题: 能判断真假的陈述句称为命题&lt;/p&gt;
+&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>tornado与vue.js解决web一对一实时聊天（IM）</title>
+    <link href="https://rebiocoder.github.io/2020/02/17/tornado%E4%B8%8Evue-js%E8%A7%A3%E5%86%B3web%E4%B8%80%E5%AF%B9%E4%B8%80%E5%AE%9E%E6%97%B6%E8%81%8A%E5%A4%A9%EF%BC%88IM%EF%BC%89/"/>
+    <id>https://rebiocoder.github.io/2020/02/17/tornado%E4%B8%8Evue-js%E8%A7%A3%E5%86%B3web%E4%B8%80%E5%AF%B9%E4%B8%80%E5%AE%9E%E6%97%B6%E8%81%8A%E5%A4%A9%EF%BC%88IM%EF%BC%89/</id>
+    <published>2020-02-17T13:56:00.000Z</published>
+    <updated>2021-01-05T03:55:11.288Z</updated>
+    
+    <content type="html"><![CDATA[<p>整个小项目最核心的通讯功能能够实现，效果如图：</p><!-- more --><p>整个小项目最核心的通讯功能能够实现，效果如图：</p><p><img src="https://i.loli.net/2020/02/17/2OIB14f9rlW67Xm.png" alt="demo图片"></p><p>demo图片</p><p>记录一下这个阶段遇到的一些问题。</p><p>解决方案：<br>前端vue.js+ajax<br>后端django rest framework + tornado<br>用户鉴权用JWT<br>redis做系统缓存  </p><p>一.前后端鉴权问题</p><p>1.django api鉴权</p><p>django通过鉴定http请求头的Authorization头部，进行鉴权。</p><p><img src="https://i.loli.net/2020/02/17/37ZXfFqpPexV9O8.png" alt="AZ9Y5E6OHP_HC_O0ZYNF_HS.png"></p><p>AZ9Y5E6OHP_HC_O0ZYNF_HS.png</p><p>当收到请求时，主要是以下方面的问题：</p><ul><li>  该token是否真实有效</li><li>  该token所代表的用户是否为唯一登录</li><li>  该token还有多久将会失效，若即将失效，则刷新token，同时要防止并发时，多次重复刷新</li></ul><p><strong>解决思路</strong></p><p>对token发放的后端接口进行拦截，将<code>/new_token</code>得到的新token存入redis中，将/refresh_token得到的刷新token也存入redis中。 当得到一个带有Authorizaion请求头的请求时，首先通过decode该token，得到username和user_id（注意这里无论token是否失效都可以解码出来基本信息）,然后在redis中查询only_key，这里实际上就解决了1，2两个问题。 刷新token的问题，没有找到特别好的解决方案，采用的是，在redis中存储一个refresh_token，如果已经刷新，则不再刷新（防止重复刷新）。</p><p>2 . tornado api鉴权</p><p>tornado中没有django中中间件的概念，通过python的修饰器来进行鉴权，与django鉴权相同。</p><p>3.vue.js鉴权</p><p>采用<code>router.beforeEach</code>进行全局验证，需要验证的页面在<code>meta</code>中添加<code>requiresAuth</code>字段。</p><p>4.axios鉴权</p><p>新建一个<code>api.js</code>，<code>create</code>一个axios实例，在axios的拦截器中添加请求头<code>Authorization</code>。 所以api请求同一存放在api.js中，在组件中使用时，调用相关promise函数。由于axios是异步的，所以在long pool时，容易出现超时中断的情况。这里我不得不在vue中引入了jquery，用ajax做长轮询。（有好的解决方案也可以交流）</p><p>5.由于浏览器的限制，ajax请求容易出现cors，跨域请求失败。 在django中可以直接安装第三方组件来解决，在tornado中不行。 当请求方式为get和部分post时是不会出现cors错误的，但是当post，dataType为json时，这时为非简单请求中的一种，浏览器会自动发送一个options进行嗅探，查看server是否支持该ip的请求，在tornado中设置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">self.set\_header(&#39;Access-Control-Allow-Origin&#39;, &#39;http:&#x2F;&#x2F;172.20.10.3:8080&#39;)  </span><br><span class="line">self.set\_header(&#39;Access-Control-Allow-Credentials&#39;, True)  </span><br><span class="line">self.set\_header(&#39;Access-Control-Allow-Headers&#39;,  </span><br><span class="line"> &#39;Origin, X-Requested-With, Content-Type, Accept, Authorization, athorization&#39;)  </span><br><span class="line">self.set\_header(&#39;Access-Control-Allow-Methods&#39;, &#39;POST, GET, PUT, DELETE&#39;)  &#96;&#96;&#96;</span><br><span class="line"></span><br><span class="line">&#96;Access-Control-Allow-Origin&#96;中为前端ip+端口号，表示同意该ip的非简单请求。</span><br><span class="line"></span><br><span class="line">二. tornado处理实时聊天消息</span><br><span class="line"></span><br><span class="line">处理实时的信息，django自己的一套并不好用，&#96;django-channels&#96;加websocket虽然能实现简单的实时通信，但是效果并不好。tornado是一个异步web框架，处理实时消息，作为django的一个组件（这里说的并不准确，因为tornado的服务器是生产级服务器，可以直接生产部署，再加nginx反向代理，性能十分优越）。参考tornado中ajax聊天室demo（facebook工程师的demo，很值得读，编码规范也可以学习），使用redis做缓存在处理单对单的消息收发。</span><br><span class="line"></span><br><span class="line">三。django与tornado的结合部署</span><br><span class="line"></span><br><span class="line">官网文档有相关的例子，wsgi的结合部署，使用的是tornado的服务器。主要代码如下：</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>wsgi_app = wsgi.WSGIContainer(<br> django.core.handlers.wsgi.WSGIHandler())<br>tornado_app = tornado.web.Application(<br> [<br> (‘/api/v1/all-message/‘, ChatCacheApi.IndexMessageHandler),<br> (‘/api/v1/new-message/‘, ChatCacheApi.NewMessageHandler),<br> (‘/api/v1/update-message/‘, ChatCacheApi.UpdateMessageHandler),<br> (‘.*‘, tornado.web.FallbackHandler, dict(fallback=wsgi_app)),<br> ])<br>server = tornado.httpserver.HTTPServer(tornado_app)<br>server.listen(options.options.port, ‘0.0.0.0’)<br>tornado.ioloop.IOLoop.current().start()  </p><p>```</p><p><img src="https://i.loli.net/2020/02/17/p96VXecZfD25FwJ.png" alt="13_6AV_3_X1H_M5F82D2_P5.png"></p><p>响应时，将会使用tornado server。</p><hr><p>主要时记录一下思路，具有实现有点麻烦，有需要再记录。</p>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;整个小项目最核心的通讯功能能够实现，效果如图：&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;over
+      
+    
+    </summary>
+    
+    
+    
+    
+    <category term="python" scheme="https://rebiocoder.github.io/tags/python/"/>
+    
+    <category term="tornado" scheme="https://rebiocoder.github.io/tags/tornado/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020/2/14 杂记</title>
+    <link href="https://rebiocoder.github.io/2020/02/14/2020-2-14-%E6%9D%82%E8%AE%B0/"/>
+    <id>https://rebiocoder.github.io/2020/02/14/2020-2-14-%E6%9D%82%E8%AE%B0/</id>
+    <published>2020-02-14T10:29:00.000Z</published>
+    <updated>2021-01-05T03:42:11.001Z</updated>
+    
+    <content type="html"><![CDATA[<p>有东西被加密了, 请输入密码查看.</p><!-- more --><p> 您好, 这里需要密码.</p><p>514a44beaa0cb7054e584d7645d94ac01066dd28f4442b1f6d2e18dde70b4649166a2497a8dd0b0dd502ccb06821c14b63726458f5ac47d6e0ae4f2fb2d6747357395b73b598a82bf58a3f87d35686e372d02fa1733e914fdee0a8df650fb84acb01ac897ed10505c16342fbf017a3cdf16fc6bd97cd09ec3551fd5a9e51ee937e32a3ed189b65ed8b85393ec05747fe510e3fde0df0d5671329c1292cab4c654c6ab06d5a476b485b07fc2e362ac7032e0c2d5d13906d3ddef8f2bc9fc8af2943f25da93b579c13e89e0ab624e3e19da03a5f5bc3660db2d9f1cd6da4dbe4cbd3650fe60a3e9aa58ab808ea7a22fc74ac14ba85987778cd6873aafe5a933f7fda9d6baed7722b6f8d4d5198f859f352775f3899bb99d1d9dfbeeafb9661418d7a0ecd73e55a80ec3919daf20d826788a92cbfcdc0981a3989f926f3e786e46db23b8a1f9e2d377286a6703898d6138710ab5e384be7c8ee6f8a59ca8a79aa51c1e64bcf2c1d47024a21477f0a80c441d09a3bb781b9fb83f46dacba40ae1c5d2186a2cd5d4e574eb6ff02728e642f7971909a8e2c8a183ab8d9b596866cfe5c359f8eb6b83dde532d6abd75a6083cabc4a3832b10c0c2bbe86f16a4b4b6efc9cf5ce1a98245e59f11ad20f159df54718215fb7459cacd9cafbfa645e38d51fb8b8fa34cdf50fee0f0f04327cfa56a21352026687b4cbca32da9535c96f0469868e304fea3243fdff616c2f29bb6c3e3cb02bb084490c17100a418d536d18dfe606165d90f4c44964a2d41cfd94833ca92db4b39ac7500a6489231d50470d5fab6c7b45f490a2e3b7859cb7beac8224c52ef72e41dd10de57ae8d38acf58cc14ac2b08d5185f6dc50dffbf5a770fda7b238c63c1522efc5a130fc23eff8ee9ae5e15380264b6ea0565ecf9c655cc3675a51c04d0c36cc6d0dc3397e0a2117454bd2ad0f8a4d9a7de5f4764bb1746318003848795815c8b522ba2f213d441127091dda279be63b8046842eb457068e36aac10c2ef7453212c0d97d0178cb1ecfa14c5dedcb86a95f24e4a7fa8109dfddefc522ccb29524c6b5ed80dfd3ed605fca72a568efb8ae4c5afa93c4979b44b5eced92a4d4c41cde62abbe7b3a74e90011210bb520ada4cec589e04553dac772b274bdcf7ef0cdd2d523d0b69b9dd9924aa2585a04e88b9d8beac5b49b90873d00093ba5cefd78cd2d1006eb679b519531a282d8384d8da0e934f74b955f2c26c6be4d3cd8a159fb5a02ca440e9bb98d8a16d7aaa0d03fb1d8ecb2c83427fb7bdad7c8566d517aad8c42ced9b5e29f914500250950754227c4ae97009fbb9ae3531ca83b3d79e0b68e7a219b2deb6f512194a60851d1f7276cb90d7aca59ff89edac946c3bc4accccb79dd9f6ac89ebb21ebf6a4313fb8a60e52417ebb2073fc5ea328fa1d0844ee2312eefe22c104434ffe02fe2080220dfca378bf589faa8bbbf3173fe07d057628fcca7673053e4db7675f42aec2333ae63a1041350cd26042e3677dc8e38b3ed28e319afeff929913fcf2c7ed8bfab8ccc7063110c846543cdfa4dead1fbe0b0a2d4f2e6797da608e0861912b47b2db0301b704af06792549204346afbd4f0f63d39732c257745c63ee3692a01b9414a59fb01e53a2c381fd98c8d956e262888a3588a6aaeef7a77b3ba469aab10dfe31cf3a888200481c97d122c1926dd017171692a07bf010f0448549397843e5cbcaeaddf5f0ec44b85fa769d8cbf28c8be7aacc2d2e60380a7ecfcfea2890d4ba693c1adacf897d8e1e73c229be85dce93fa26d9b68e160b0053aef09988694a29f054fbd844b8e5f970befe823b840c5b4c2b19ec1c0a534d0ba6a2af0eb41f53dbfeb3edd93e03c644aa94a544c0a735ab9a073e7948386fb4a0da19e6be4cdec6712c3c5ab201705d1cc9b99efda72e1cf0fbd66f1a78f249448b54c81c1f99e144398a4df75f045cd823f7d174150b224f9c4fa148b66072ca30d9601aca7a34d1db23e2d71913f589753202c2e4e9d52a758445a41407966b7bd995e94234e5f8b3468ab7011408f4de5f30f94182234477e65fc63a6d6f3b57aedf530d4e2851270f633d96111b672f07fa227a266f699dbed320a096034976413116e4d03b13d7795cf949ac4e4f6f31f6ec0b332c0ac6362af2486d0d251f187db0631135657e23368e557624d76ab6b3bc7a918a349f5c3fa55754aec5dd875b6efd116b0be8040520d7babebb753093a0031194ed306a7144aa4bc755a19a6a499c9ef6e12e5d4a2734eaf48a4153dd894387c3bff5d1e25fd34b6e9b23865961aa2fe7f27b1e718a7d8b2f0576b09268648657e1de0669518d731f7e97e8b834ff752aa8e908cbee32646d6d5f76f3616f52bf209bfbbf1fe40b182282e99b463d910c822e4e3a30aaaad1fc06cb7440be1d90daa7cc041646f3db81c721e9a2436ab745833c594adef80e3dd55ecde535af865240f41e776202dee9e8e46b542eaac0b0050ebb0ed81345f6f3d1bf348b3ee84d90035f22fef421de9f6236267107761f0f70bce9d08c1fae7001f6ee474a1616eee305d2e6e7656e6494e9da190961fc736161ba5334688fbdd842740031496ef7b58333ecb6fd8b88af098e7994060dec8d0f48260980bee1a2cd885c22fc2e630a92c058523a2ad942bec1e49d05a48a515b6a19cb2016707ed17d82aee6e58de38f3df3905da21c2cef1d94943b99e0cd679f9790e000b5d366fba5dcd202a4c58e4b20bed859c61f21bb48f159e54c7dd0a6bd09a534a09f16af95087c806ff9d5af5feeaa8fb9ce4bdd58905a016c6055d3879e6fb45804bbf858d55e6887dc8ffff9e9d98c3fc15737e72060b49aa6fa1c6a49448edee85297d06516aeec5e8bb5c35a9f27f02f7b2b20a806689d7b368658dcdaa125aad575276c496206eb58097bc17359012a3127a049f1c99c8d3dccf0c9d96266de40d3e75db97d99fa348e1039ea91d10432521f5e24a726cb3dfdfa143e85881b84b50dc74f83522f61aff251af24e759b2b5811d1bbd5beaf48b664219c4430d07055342b1fd1716bc7e35269f93c94029b04e83275b0ed720d7ead4ecbf02451409180a672727dfc0b175271f9513def46551629d5300f0a19fc42e1c0d0fa4bf3ae18e859260aaab771d404a8072e81c1948f0542dd0187d03eb72936abcd746de62ebc2e9dc4fef0ac73eaeecd78f72634749e64101056f2245f5637cae783374659ad994262c31c618e7</p>]]></content>
+    
+    
+    <summary type="html">
+    
+      有东西被加密了, 请输入密码查看.
+    
+    </summary>
+    
+    
+    
+    
+    <category term="日常生活" scheme="https://rebiocoder.github.io/tags/%E6%97%A5%E5%B8%B8%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tornado聊天室demo.py源码分析</title>
+    <link href="https://rebiocoder.github.io/2020/02/14/tornado%E8%81%8A%E5%A4%A9%E5%AE%A4demo-py%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>https://rebiocoder.github.io/2020/02/14/tornado%E8%81%8A%E5%A4%A9%E5%AE%A4demo-py%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</id>
+    <published>2020-02-14T10:25:00.000Z</published>
+    <updated>2021-01-05T03:56:28.945Z</updated>
+    
+    <content type="html"><![CDATA[<p>在tornado的源码之中有facebook的工程师写的demo,结构十分的优雅,可以用来学习.这篇文章主要是来分析chatdemo.py,tornado使用长轮询的方式建立聊天室的方式.不足之处,欢迎留言讨论.</p><hr><p>chatdemo.py的文件结构如下</p><!-- more --><p>在tornado的源码之中有facebook的工程师写的demo,结构十分的优雅,可以用来学习.这篇文章主要是来分析chatdemo.py,tornado使用长轮询的方式建立聊天室的方式.不足之处,欢迎留言讨论.</p><hr><p>chatdemo.py的文件结构如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:.  </span><br><span class="line">├─chatdemo.py  </span><br><span class="line">├─static  </span><br><span class="line">└─templates  </span><br></pre></td></tr></table></figure><p>首先来看chatdemo.py中的内容.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class MessageBuffer(object):  </span><br><span class="line"> def \_\_init\_\_(self):  </span><br><span class="line"> \# cond is notified whenever the message cache is updated  </span><br><span class="line"> self.cond &#x3D; tornado.locks.Condition()  </span><br><span class="line"> self.cache &#x3D; \[\]  </span><br><span class="line"> self.cache\_size &#x3D; 200  </span><br></pre></td></tr></table></figure><p>首先是创建了一个messagebuffer,一个用来缓存聊天记录的类,在析构函数中有一个<code>self.cond</code>,它是一个<code>tornado.locks.Condition()</code>,具体看一下<code>locks.condition</code>的内容:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">class \_TimeoutGarbageCollector(object):  </span><br><span class="line"> &quot;&quot;&quot;Base class for objects that periodically clean up timed-out waiters.  </span><br><span class="line">  </span><br><span class="line"> Avoids memory leak in a common pattern like:  </span><br><span class="line">  </span><br><span class="line"> while True:  </span><br><span class="line"> yield condition.wait(short\_timeout)  </span><br><span class="line"> print(&#39;looping....&#39;)  </span><br><span class="line"> &quot;&quot;&quot;  </span><br><span class="line">  </span><br><span class="line"> def \_\_init\_\_(self) -&gt; None:  </span><br><span class="line"> self.\_waiters &#x3D; collections.deque()  \# type: Deque\[Future\]  </span><br><span class="line"> self.\_timeouts &#x3D; 0  </span><br><span class="line">  </span><br><span class="line"> def \_garbage\_collect(self) -&gt; None:  </span><br><span class="line"> \# Occasionally clear timed-out waiters.  </span><br><span class="line"> self.\_timeouts +&#x3D; 1  </span><br><span class="line"> if self.\_timeouts &gt; 100:  </span><br><span class="line"> self.\_timeouts &#x3D; 0  </span><br><span class="line"> self.\_waiters &#x3D; collections.deque(w for w in self.\_waiters if not w.done())  </span><br><span class="line">class Condition(\_TimeoutGarbageCollector):  </span><br><span class="line"> def \_\_init\_\_(self) -&gt; None:  </span><br><span class="line"> super(Condition, self).\_\_init\_\_()  </span><br><span class="line"> self.io\_loop &#x3D; ioloop.IOLoop.current()  </span><br><span class="line">  </span><br><span class="line"> def \_\_repr\_\_(self) -&gt; str:  </span><br><span class="line"> result &#x3D; &quot;&lt;%s&quot; % (self.\_\_class\_\_.\_\_name\_\_,)  </span><br><span class="line"> if self.\_waiters:  </span><br><span class="line"> result +&#x3D; &quot; waiters\[%s\]&quot; % len(self.\_waiters)  </span><br><span class="line"> return result + &quot;&gt;&quot;  </span><br><span class="line">  </span><br><span class="line"> def wait(self, timeout: Union\[float, datetime.timedelta\] &#x3D; None) -&gt; Awaitable\[bool\]:  </span><br><span class="line"> &quot;&quot;&quot;Wait for \&#96;.notify\&#96;.  </span><br><span class="line">  </span><br><span class="line"> Returns a \&#96;.Future\&#96; that resolves \&#96;\&#96;True\&#96;\&#96; if the condition is notified,  </span><br><span class="line"> or \&#96;\&#96;False\&#96;\&#96; after a timeout.  </span><br><span class="line"> &quot;&quot;&quot;  </span><br><span class="line"> waiter &#x3D; Future()  \# type: Future\[bool\]  </span><br><span class="line"> self.\_waiters.append(waiter)  </span><br><span class="line"> if timeout:  </span><br><span class="line">  </span><br><span class="line"> def on\_timeout() -&gt; None:  </span><br><span class="line"> if not waiter.done():  </span><br><span class="line"> future\_set\_result\_unless\_cancelled(waiter, False)  </span><br><span class="line"> self.\_garbage\_collect()  </span><br><span class="line">  </span><br><span class="line"> io\_loop &#x3D; ioloop.IOLoop.current()  </span><br><span class="line"> timeout\_handle &#x3D; io\_loop.add\_timeout(timeout, on\_timeout)  </span><br><span class="line"> waiter.add\_done\_callback(lambda \_: io\_loop.remove\_timeout(timeout\_handle))  </span><br><span class="line"> return waiter  </span><br><span class="line">  </span><br><span class="line"> def notify(self, n: int &#x3D; 1) -&gt; None:  </span><br><span class="line"> &quot;&quot;&quot;Wake \&#96;\&#96;n\&#96;\&#96; waiters.&quot;&quot;&quot;  </span><br><span class="line"> waiters &#x3D; \[\]  \# Waiters we plan to run right now.  </span><br><span class="line"> while n and self.\_waiters:  </span><br><span class="line"> waiter &#x3D; self.\_waiters.popleft()  </span><br><span class="line"> if not waiter.done():  \# Might have timed out.  </span><br><span class="line"> n -&#x3D; 1  </span><br><span class="line"> waiters.append(waiter)  </span><br><span class="line">  </span><br><span class="line"> for waiter in waiters:  </span><br><span class="line"> future\_set\_result\_unless\_cancelled(waiter, True)  </span><br><span class="line">  </span><br><span class="line"> def notify\_all(self) -&gt; None:  </span><br><span class="line"> &quot;&quot;&quot;Wake all waiters.&quot;&quot;&quot;  </span><br><span class="line"> self.notify(len(self.\_waiters))  </span><br></pre></td></tr></table></figure><p><code>condition</code>使用了<code>_TimeoutGarbageCollector</code>基类,在<code>_TimeoutGarbageCollector</code>中有一个用来存放future对象的<code>self._waiters = collections.deque() # type: Deque[Future]</code>队列,deque是一个双向队列,可以当队列来用,也可以当栈来使用.在<code>conditoin</code>中有一个wait函数,它的作用是等待一个通知,如果<code>condition</code>类被通知,则<code>wait</code>将会返回一个future对象,返回true.当<code>condition.wait()</code>被调用时,将会在<code>condition</code>类中_witer中存放进这个waiter,他是一个future对象.如果超时,IOLoop线程执行add_timeout,添加一个超时回调,<strong>请注意，从其他线程调用add_timeout是不安全的. 相反，您必须使用add_callback将控制权转移到IOLoop的线程，然后从那里调用add_timeout .</strong> waiter在完成时,可以执行一些回调,在这里执行一个lambda表达式,删除超时任务.<code>on_timeout</code>是一个闭包,当超时时间达到之后,如果waiter还没有set_result,则被添加进入_timeout中.</p><p><code>notify</code>用来进行通知,<code>self._waiters.popleft()</code>从左侧出队,</p><p>再来看<code>messagebuffer</code>中的<code>get_message_since</code>:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">def get\_messages\_since(self, cursor):  </span><br><span class="line"> &quot;&quot;&quot;Returns a list of messages newer than the given cursor.  </span><br><span class="line">  </span><br><span class="line"> \&#96;\&#96;cursor\&#96;\&#96; should be the \&#96;\&#96;id\&#96;\&#96; of the last message received.  </span><br><span class="line"> &quot;&quot;&quot;  </span><br><span class="line"> results &#x3D; \[\]  </span><br><span class="line"> for msg in reversed(self.cache):  </span><br><span class="line"> if msg\[&quot;id&quot;\] &#x3D;&#x3D; cursor:  </span><br><span class="line"> break  </span><br><span class="line"> results.append(msg)  </span><br><span class="line"> results.reverse()  </span><br><span class="line"> return results  </span><br></pre></td></tr></table></figure><p>返回一个消息列表.而<code>add_message</code>,在cache中补充新消息,同时进行<code>notify_all</code>.即把消息通知各所有的waiter</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def add\_message(self, message):  </span><br><span class="line"> self.cache.append(message)  </span><br><span class="line"> if len(self.cache) &gt; self.cache\_size:  </span><br><span class="line"> self.cache &#x3D; self.cache\[-self.cache\_size :\]  </span><br><span class="line"> self.cond.notify\_all()  </span><br></pre></td></tr></table></figure><p>在发送一条新消息的处理函数中:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class MessageNewHandler(tornado.web.RequestHandler):  </span><br><span class="line"> &quot;&quot;&quot;Post a new message to the chat room.&quot;&quot;&quot;  </span><br><span class="line">  </span><br><span class="line"> def post(self):  </span><br><span class="line"> message &#x3D; &#123;&quot;id&quot;: str(uuid.uuid4()), &quot;body&quot;: self.get\_argument(&quot;body&quot;)&#125;  </span><br><span class="line"> \# render\_string() returns a byte string, which is not supported  </span><br><span class="line"> \# in json, so we must convert it to a character string.  </span><br><span class="line"> message\[&quot;html&quot;\] &#x3D; tornado.escape.to\_unicode(  </span><br><span class="line"> self.render\_string(&quot;message.html&quot;, message&#x3D;message)  </span><br><span class="line"> )  </span><br><span class="line"> if self.get\_argument(&quot;next&quot;, None):  </span><br><span class="line"> self.redirect(self.get\_argument(&quot;next&quot;))  </span><br><span class="line"> else:  </span><br><span class="line"> self.write(message)  </span><br><span class="line"> global\_message\_buffer.add\_message(message)  </span><br></pre></td></tr></table></figure><p>有<code>global_message_buffer.add_message(message)</code>即将消息进行<code>notify_all</code>.</p><p>前端长轮询,tornado对应的处理函数如下,是整个demo的关键:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class MessageUpdatesHandler(tornado.web.RequestHandler):  </span><br><span class="line"> &quot;&quot;&quot;Long-polling request for new messages.  </span><br><span class="line">  </span><br><span class="line"> Waits until new messages are available before returning anything.  </span><br><span class="line"> &quot;&quot;&quot;  </span><br><span class="line">  </span><br><span class="line"> async def post(self):  </span><br><span class="line"> cursor &#x3D; self.get\_argument(&quot;cursor&quot;, None)  </span><br><span class="line"> messages &#x3D; global\_message\_buffer.get\_messages\_since(cursor)  </span><br><span class="line"> while not messages:  </span><br><span class="line"> \# Save the Future returned here so we can cancel it in  </span><br><span class="line"> \# on\_connection\_close.  </span><br><span class="line"> self.wait\_future &#x3D; global\_message\_buffer.cond.wait()  </span><br><span class="line"> try:  </span><br><span class="line"> await self.wait\_future  </span><br><span class="line"> except asyncio.CancelledError:  </span><br><span class="line"> return  </span><br><span class="line"> messages &#x3D; global\_message\_buffer.get\_messages\_since(cursor)  </span><br><span class="line"> if self.request.connection.stream.closed():  </span><br><span class="line"> return  </span><br><span class="line"> self.write(dict(messages&#x3D;messages))  </span><br><span class="line">  </span><br><span class="line"> def on\_connection\_close(self):  </span><br><span class="line"> self.wait\_future.cancel()  </span><br></pre></td></tr></table></figure><p>当请求到达之后,先查看cache中是否有未读的消息,如果有的话,只要连接还没有断开,就发送出去.<br>如果没有,就hold住该请求,进入while.<code>await self.wait_future</code>,到这里异步处理完成,该请求挂在这里,等待self.wait_future产生结果,而不影响其他连接的生产,即不会发生阻塞.<br>只有当有新消息达到之后,调用<code>MessageNewHandler</code>,执行了<code>global_message_buffer.add_message(message)</code>,waiter才会产生set_result,产生返回.</p>]]></content>
+    
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在tornado的源码之中有facebook的工程师写的demo,结构十分的优雅,可以用来学习.这篇文章主要是来分析chatdemo.py,tornado使用长轮询的方式建立聊天室的方式.不足之处,欢迎留言讨论.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;chatdemo.py的文件结构如下
+      
+    
+    </summary>
+    
+    
+    
+    
+    <category term="tornado" scheme="https://rebiocoder.github.io/tags/tornado/"/>
+    
+    <category term="学习" scheme="https://rebiocoder.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
 </feed>
