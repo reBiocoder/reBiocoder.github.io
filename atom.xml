@@ -124,31 +124,6 @@
   </entry>
   
   <entry>
-    <title>UML类图</title>
-    <link href="https://rebiocoder.github.io/2020/04/16/UML%E7%B1%BB%E5%9B%BE/"/>
-    <id>https://rebiocoder.github.io/2020/04/16/UML%E7%B1%BB%E5%9B%BE/</id>
-    <published>2020-04-16T03:39:00.000Z</published>
-    <updated>2021-01-05T03:52:39.359Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>类图基本属性</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+表示public  </span><br><span class="line">\-表示private  </span><br><span class="line">#表示protected  </span><br></pre></td></tr></table></figure></li><li><p> 类与类的基本关系</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.依赖关系  </span><br><span class="line">定义：有两个元素x和y，如果修改x的定义可能会引起对y的定义的修改，则称y依赖与元素x，用带箭头的虚线表示依赖关系，箭头指向被依赖的对象。  </span><br><span class="line">  </span><br><span class="line">2.泛化关系  </span><br><span class="line">泛化关系就是子类与父类之间的继承关系。用带空心箭头的实线表示，箭头指向父类  </span><br><span class="line">  </span><br><span class="line">3.关联关系  </span><br><span class="line">关联关系可以理解为ER图中的实体关系，用实现表示，上方标识数字来进行确认。  </span><br><span class="line">  </span><br><span class="line">4.聚合关系  </span><br><span class="line">聚合关系是一种特殊的关联关系，聚合关系表示的是类之间整体与部分的关系，用带有空心菱形的实线表示，空心菱形指向代表整体的类。  </span><br><span class="line">  </span><br><span class="line">5.实现关系  </span><br><span class="line">定义接口，用户带空心箭头的虚线来表示</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;类图基本属性&lt;figure class=&quot;highlight vala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;
-      
-    
-    </summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>离散结构笔记(1)</title>
     <link href="https://rebiocoder.github.io/2020/02/21/%E7%A6%BB%E6%95%A3%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0-1/"/>
     <id>https://rebiocoder.github.io/2020/02/21/%E7%A6%BB%E6%95%A3%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0-1/</id>
