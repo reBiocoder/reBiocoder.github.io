@@ -17,21 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>[算法设计]求最长子序列问题 | Echor的博客</title>
-  <meta name="description" content="问题: 求无序序列的最长子序列 方法: 动态规划法 关键点: 1dp[i] : 表示数组中的第i位置的最长子序列的长度,初始默认所有位置的dp[i] &#x3D; 1 思路: 假设已知Subsequence[i-1]位置的最长子序列为dp[i-1],则dp[i],显然如果subsequence[i]&gt;subsequence[i-1],则dp[i] &#x3D; dp[i-1] + 1 代码: 1234">
+  <title>[Golang]基础知识 | Echor的博客</title>
+  <meta name="description" content="变量声明1.单个变量声明 var name string 这样声明一个变量，注意如果没有赋初始值，那么字符串初始值为空字符串“”，int为0，float为0.0，bool为false，指针类型为nil。 在go中，单引号和双引号有区别。在初始化变量时，如果右值带有小数点，那么建议带上类型float32。 2.多个变量一起声明，声明多个变量 12345var (	old_name string	ag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[算法设计]求最长子序列问题">
-<meta property="og:url" content="https://rebiocoder.github.io/2020/03/02/%E6%B3%95%E8%AE%BE%E8%AE%A1-%E6%B1%82%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="[Golang]基础知识">
+<meta property="og:url" content="https://rebiocoder.github.io/2021/01/05/%E8%AE%BF%E9%97%AE/index.html">
 <meta property="og:site_name" content="Echor">
-<meta property="og:description" content="问题: 求无序序列的最长子序列 方法: 动态规划法 关键点: 1dp[i] : 表示数组中的第i位置的最长子序列的长度,初始默认所有位置的dp[i] &#x3D; 1 思路: 假设已知Subsequence[i-1]位置的最长子序列为dp[i-1],则dp[i],显然如果subsequence[i]&gt;subsequence[i-1],则dp[i] &#x3D; dp[i-1] + 1 代码: 1234">
+<meta property="og:description" content="变量声明1.单个变量声明 var name string 这样声明一个变量，注意如果没有赋初始值，那么字符串初始值为空字符串“”，int为0，float为0.0，bool为false，指针类型为nil。 在go中，单引号和双引号有区别。在初始化变量时，如果右值带有小数点，那么建议带上类型float32。 2.多个变量一起声明，声明多个变量 12345var (	old_name string	ag">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-02T10:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-05T04:17:07.237Z">
+<meta property="og:image" content="https://rebiocoder.github.io/images/pasted-11.png">
+<meta property="og:image" content="https://rebiocoder.github.io/images/pasted-12.png">
+<meta property="og:image" content="https://rebiocoder.github.io/images/pasted-13.png">
+<meta property="article:published_time" content="2021-01-05T05:20:00.000Z">
+<meta property="article:modified_time" content="2021-01-05T08:51:53.009Z">
 <meta property="article:author" content="Echor">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Golang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rebiocoder.github.io/images/pasted-11.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://rebiocoder.github.io/2020/03/02/%E6%B3%95%E8%AE%BE%E8%AE%A1-%E6%B1%82%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/index.html">
+  <link rel="canonical" href="https://rebiocoder.github.io/2021/01/05/%E8%AE%BF%E9%97%AE/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Echor" type="application/atom+xml">
   
@@ -374,14 +378,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-法设计-求最长子序列问题" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-访问" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      [算法设计]求最长子序列问题
+      [Golang]基础知识
     </h1>
   
 
@@ -389,20 +393,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/03/02/%E6%B3%95%E8%AE%BE%E8%AE%A1-%E6%B1%82%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/" class="article-date">
-	  <time datetime="2020-03-02T10:00:00.000Z" itemprop="datePublished">2020-03-02</time>
+	<a href="/2021/01/05/%E8%AE%BF%E9%97%AE/" class="article-date">
+	  <time datetime="2021-01-05T05:20:00.000Z" itemprop="datePublished">2021-01-05</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/">算法设计</a>
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+	<a class="article-tag-link-link" href="/tags/Golang/" rel="tag">Golang</a>
   </span>
 
 
@@ -415,31 +419,100 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/02/%E6%B3%95%E8%AE%BE%E8%AE%A1-%E6%B1%82%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/01/05/%E8%AE%BF%E9%97%AE/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 273(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.9k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>问题: 求无序序列的最长子序列</p>
-<p>方法: 动态规划法</p>
-<p>关键点:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i] : 表示数组中的第i位置的最长子序列的长度,初始默认所有位置的dp[i] &#x3D; 1</span><br></pre></td></tr></table></figure>
-<p>思路: 假设已知<code>Subsequence[i-1]</code>位置的最长子序列为<code>dp[i-1]</code>,则<code>dp[i]</code>,显然如果<code>subsequence[i]&gt;subsequence[i-1]</code>,则<code>dp[i] = dp[i-1] + 1</code></p>
-<p>代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">&#x2F;*求最长子序列*&#x2F;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	const int MaxN &#x3D; 100;</span><br><span class="line">	int Subsequence[MaxN];</span><br><span class="line">	int dp[MaxN];</span><br><span class="line">	for (int j &#x3D; 0; j &lt; MaxN; ++j) &#123;</span><br><span class="line">		dp[j] &#x3D; 1;</span><br><span class="line">	&#125;</span><br><span class="line">	int n;</span><br><span class="line">	scanf_s(&quot;%d&quot;, &amp;n);</span><br><span class="line">	if (n !&#x3D; 0) &#123;</span><br><span class="line">		for (int i &#x3D; 0; i &lt; n; ++i) &#123;</span><br><span class="line">			scanf_s(&quot;%d&quot;, &amp;Subsequence[i]); &#x2F;&#x2F;子序</span><br><span class="line">		&#125;</span><br><span class="line">		for (int i &#x3D; 0; i &lt; n; ++i) &#123;</span><br><span class="line">			for (int j &#x3D; 0; j &lt; i; ++j) &#123;</span><br><span class="line">				if (Subsequence[i] &gt; Subsequence[j]) &#123;</span><br><span class="line">					dp[i] &#x3D; max(dp[j] + 1, dp[i]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;                                    </span><br><span class="line">		printf(&quot;输入结束!\n&quot;);</span><br><span class="line">		for (int j &#x3D; 0; j &lt; n; ++j) &#123;</span><br><span class="line">			printf(&quot;%d&quot;, Subsequence[j]);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;\n&quot;);</span><br><span class="line">		for (int j &#x3D; 0; j &lt; n; ++j) &#123;</span><br><span class="line">			printf(&quot;%d&quot;, dp[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
+        <h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>1.单个变量声明 <code>var name string</code> 这样声明一个变量，注意如果没有赋初始值，那么字符串初始值为空字符串“”，int为0，float为0.0，bool为false，指针类型为nil。</p>
+<p>在go中，单引号和双引号有区别。在初始化变量时，如果右值带有小数点，那么建议带上类型float32。</p>
+<p>2.多个变量一起声明，声明多个变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var (</span><br><span class="line">	old_name string</span><br><span class="line">	age      int</span><br><span class="line">	gender   float32</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>3.匿名变量的优点</p>
+<ul>
+<li>不分配内存，不占用内存空间</li>
+<li>不需要你为命名无用的变量名而纠结</li>
+<li>多次声明不会有任何问题</li>
+</ul>
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p><img src="/images/pasted-11.png" alt="upload successful"><br>在go中最好不要直接使用<code>int</code>给变量作为type，原因在于在32位机器上，int表示4个字节相当于int32，在64位机器上，int 表示8个字节，相当于int64。</p>
+<p>二进制表示一个数：<code>0b110</code><br>八进制表示一个数： <code>0o14</code><br>十六进制表示一个数：<code>0xC</code></p>
+<p>fmt格式化代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">%b 格式化为二进制，</span><br><span class="line">%c unicode码值</span><br><span class="line">%d 十进制</span><br><span class="line">%o 八进制</span><br><span class="line">%x 十六进制</span><br><span class="line">%X 十六进制</span><br><span class="line">%U unicode格式</span><br><span class="line">%E 科学计数法</span><br><span class="line">%f 浮点数格式</span><br></pre></td></tr></table></figure>
+<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><p>浮点数类型的值一般由整数部分、小数点“.”和小数部分组成。</p>
+<p>其中，整数部分和小数部分均由10进制表示法表示。不过还有另一种表示方法。那就是在其中加入指数部分。指数部分由“E”或“e”以及一个带正负号的10进制数组成。比如，3.7E-2表示浮点数0.037。又比如，3.7E+1表示浮点数37。</p>
+<p>有一点需要注意，在Go语言里，浮点数的相关部分只能由10进制表示法表示，而不能由8进制表示法或16进制表示法表示。比如，03.7表示的一定是浮点数3.7。</p>
+<h3 id="float32-和-float64"><a href="#float32-和-float64" class="headerlink" title="float32 和 float64"></a>float32 和 float64</h3><p>Go语言中提供了两种精度的浮点数 float32 和 float64。</p>
+<p>float32，也即我们常说的单精度，存储占用4个字节，也即4*8=32位，其中1位用来符号，8位用来指数，剩下的23位表示尾数。</p>
+<p><img src="/images/pasted-12.png" alt="upload successful"></p>
+<p>float64，也即我们熟悉的双精度，存储占用8个字节，也即8*8=64位，其中1位用来符号，11位用来指数，剩下的52位表示尾数。</p>
+<p><img src="/images/pasted-13.png" alt="upload successful"></p>
+<p>浮点数类型的取值范围可以从很微小到很巨大。浮点数取值范围的极限值可以在 math 包中找到：</p>
+<ul>
+<li>常量 math.MaxFloat32 表示 float32 能取到的最大数值，大约是 3.4e38；</li>
+<li>常量 math.MaxFloat64 表示 float64 能取到的最大数值，大约是 1.8e308；</li>
+<li>float32 和 float64 能表示的最小值分别为 1.4e-45 和 4.9e-324。</li>
+</ul>
+<p>注意浮点数表示精度的问题：</p>
+<ol>
+<li><p>float32的精度只能提供大约6个十进制数（表示后科学计数法后，小数点后6位）的精度</p>
+</li>
+<li><p>float64的精度能提供大约15个十进制数（表示后科学计数法后，小数点后15位）的精度</p>
+</li>
+</ol>
+<h2 id="byte和rune"><a href="#byte和rune" class="headerlink" title="byte和rune"></a>byte和rune</h2><p>byte用来表示一个ASCII码字符，rune占有四个字节，表示一个unicode字符。</p>
+<p>单引号用来表示字符，如果你使用双引号，就意味着你要定义一个字符串，赋值时与前面声明的前面会不一致，这样在编译的时候就会出错。</p>
+<p>byte 和 uint8 没有区别，rune 和 uint32 没有区别，那为什么还要多出一个 byte 和 rune 类型呢？</p>
+<p>理由很简单，因为uint8 和 uint32 ，直观上让人以为这是一个数值，但是实际上，它也可以表示一个字符，所以为了消除这种直观错觉，就诞生了 byte 和 rune 这两个别名类型。</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串一般用双引号表示””，但是字符串也可以用``反引号，在反引号中，会忽略转义字符。</p>
+<h2 id="数组与切片"><a href="#数组与切片" class="headerlink" title="数组与切片"></a>数组与切片</h2><p>数组是一个由固定长度的特定元素类型组成的序列。</p>
+<p>注意：</p>
+<ol>
+<li>[3]int 与[4]int是不同的数据类型</li>
+<li>如果在声明数组时，不想声明容量大小，可以使用<code>name := [...]int&#123;&#125;</code>类型的方式来让go自动识别大小。</li>
+<li>可以给自定义的数组类型重命名，使用<code>type</code>关键字：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type arr [3]int</span><br><span class="line">var name arr &#x3D; arr &#123;1,2,3&#125;</span><br></pre></td></tr></table></figure>
+<p>数组 与 切片 有相同点，它们都是可以容纳若干类型相同的元素的容器</p>
+<p>也有不同点，数组的容器大小固定，而切片本身是引用类型，它更像是 Python 中的 list ，我们可以对它 append 进行元素的添加。</p>
+<p>取切片值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">m :&#x3D; make([]int, 2, 10)</span><br><span class="line">	fmt.Println(m)</span><br><span class="line"></span><br><span class="line">	fmt.Printf(&quot;\n&quot;)</span><br><span class="line">	myarr :&#x3D; []int&#123;&#125;</span><br><span class="line">	fmt.Println(myarr)</span><br><span class="line">	myarr &#x3D; append(myarr, 2)</span><br><span class="line">	fmt.Println(myarr)</span><br><span class="line">	myarr &#x3D; append(myarr, []int&#123;7, 8, 9&#125;...) &#x2F;&#x2F;解包切片</span><br><span class="line">	fmt.Println(myarr)</span><br><span class="line">	myarr &#x3D; append([]int&#123;100&#125;, myarr...) &#x2F;&#x2F;在第一个位置插入</span><br><span class="line">	fmt.Println(myarr)</span><br><span class="line">	fmt.Println(myarr[len(myarr)-1])</span><br><span class="line">	myarr &#x3D; append(myarr[0:len(arr)-1], append([]int&#123;520, 520&#125;, myarr[len(myarr)-1:]...)...) &#x2F;&#x2F;在最后一个元素之前插入元素</span><br><span class="line">	fmt.Println(myarr)</span><br></pre></td></tr></table></figure>
+<h2 id="字典与布尔类型"><a href="#字典与布尔类型" class="headerlink" title="字典与布尔类型"></a>字典与布尔类型</h2><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><p>字典的下标读取可以返回两个值，使用第二个返回值都表示对应的 key 是否存在，若存在ok为true，若不存在，则ok为false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;********************************************</span><br><span class="line">var socres map[string]int &#x3D; map[string]int&#123;&quot;english&quot;: 92, &quot;chinese&quot;: 85&#125;</span><br><span class="line">fmt.Println(socres)</span><br><span class="line">users :&#x3D; make(map[string]int) &#x2F;&#x2F;初始化一个字典</span><br><span class="line">fmt.Println(users)</span><br><span class="line">users[&quot;Echor&quot;] &#x3D; 19 &#x2F;&#x2F;添加元素</span><br><span class="line">users[&quot;zhou&quot;] &#x3D; 20</span><br><span class="line">fmt.Println(users)</span><br><span class="line">users[&quot;zhou&quot;] &#x3D; 21 &#x2F;&#x2F;添加重复键元素</span><br><span class="line">fmt.Println(users)</span><br><span class="line">fmt.Println(users[&quot;zhou&quot;]) &#x2F;&#x2F;得到存在元素</span><br><span class="line">_, ok :&#x3D; users[&quot;sss&quot;]</span><br><span class="line">fmt.Println(ok)       &#x2F;&#x2F;得到不存在元素</span><br><span class="line">delete(users, &quot;zhou&quot;) &#x2F;&#x2F;删除存在元素</span><br><span class="line">fmt.Println(users)</span><br><span class="line">delete(users, &quot;sss&quot;) &#x2F;&#x2F;删除不存在元素</span><br><span class="line">fmt.Println(users)</span><br><span class="line">   	fmt.Println(users)</span><br><span class="line">for k, v :&#x3D; range socres &#123; &#x2F;&#x2F;循环得到键值对</span><br><span class="line">	fmt.Println(k, v)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>关于布尔值，无非就两个值：true 和 false。只是这两个值，在不同的语言里可能不同。</p>
+<p>而在 Go 中，真值用 true 表示，不但不与 1 相等，并且更加严格，不同类型无法进行比较，而假值用 false 表示，同样与 0 无法比较。</p>
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>指针的概念学了c语言将不难理解，变量分为普通变量和指针变量；</p>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if-else-if-else-判断"><a href="#if-else-if-else-判断" class="headerlink" title="if-else if- else 判断"></a>if-else if- else 判断</h3><p>在golang中<code>if-else if -else</code>有以下特点：</p>
+<ol>
+<li>在if之后可以接一个表达式</li>
+<li><code>&#125;else&#123;</code>  <code>&#125;else if&#123;</code>必须和左右括号在同一行</li>
+</ol>
+<h3 id="switch-case"><a href="#switch-case" class="headerlink" title="switch-case"></a>switch-case</h3><p>注意：</p>
+<ol>
+<li>在case后面可以接多个判断条件，他们的关系是”或“；</li>
+<li>可以使用fallthrough进行穿透，但是只能穿透一层；</li>
+<li>当条件都不匹配时，匹配default</li>
+</ol>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>for 循环的基本模型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for [condition |  ( init; condition; increment ) | Range]</span><br><span class="line">&#123;</span><br><span class="line">   statement(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ol>
+<li>在go中没有while，通过<code>for&#123;&#125;</code>（在for后面不加任何表达式来控制无线循环）</li>
+<li><code>for range</code>遍历可以可迭代对象。<code>for range</code>的for后面不能添加任何表达式</li>
+</ol>
+<h3 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h3><p>不建议使用，使用方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goto flag:</span><br><span class="line">	****</span><br><span class="line">flag:</span><br><span class="line">	****</span><br><span class="line">    ****</span><br></pre></td></tr></table></figure>
+<h3 id="defer语句"><a href="#defer语句" class="headerlink" title="defer语句"></a>defer语句</h3><ol>
+<li>延迟调用。defer 的用法很简单，只要在后面跟一个函数的调用，就能实现将这个 xxx 函数的调用延迟到当前函数执行完后再执行。</li>
+<li>多个defer满足”先进后出“的条件</li>
+</ol>
 
       
     </div>
@@ -449,7 +522,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://rebiocoder.github.io/2020/03/02/%E6%B3%95%E8%AE%BE%E8%AE%A1-%E6%B1%82%E6%9C%80%E9%95%BF%E5%AD%90%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98/" title="[算法设计]求最长子序列问题" target="_blank" rel="external">https://rebiocoder.github.io/2020/03/02/法设计-求最长子序列问题/</a>
+      <a href="https://rebiocoder.github.io/2021/01/05/%E8%AE%BF%E9%97%AE/" title="[Golang]基础知识" target="_blank" rel="external">https://rebiocoder.github.io/2021/01/05/访问/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -495,13 +568,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/03/05/%E6%B3%95%E8%AE%BE%E8%AE%A1-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%B1%82%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/" title="[算法设计]动态规划求最长公共子序列"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2020/03/02/%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90-5/" title="[算法设计]斐波拉契优化与区间不相交问题"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/01/05/tornado%E5%90%8E%E7%AB%AFsession%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E9%89%B4%E6%9D%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="tornado后端session用户认证鉴权解决方案"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
