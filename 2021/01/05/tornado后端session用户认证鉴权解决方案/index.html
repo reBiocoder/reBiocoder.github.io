@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>404 Not Found：该页无法显示 | Echor的博客</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found：该页无法显示">
-<meta property="og:url" content="https://rebiocoder.github.io/404.html">
+  <title>tornado后端session用户认证鉴权解决方案 | Echor的博客</title>
+  <meta name="description" content="tornado框架自身没有集成session鉴权，但是对cookie支持良好。由于现在前端vue部署在一个端口上，后端tornado分布式应用部署在多个端口上，这就会导致浏览器的跨域问题产生（url不同，即协议，域名，端口三者有不相同的地方）。 在前后端分离的项目中，由于页面的路由跳转由vue控制，后端应用只提供数据。这样就会使鉴权任务变得较为复杂。一个比较良好的解决思路是，在前端需要鉴权才能访问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tornado后端session用户认证鉴权解决方案">
+<meta property="og:url" content="https://rebiocoder.github.io/2021/01/05/tornado%E5%90%8E%E7%AB%AFsession%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E9%89%B4%E6%9D%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="Echor">
+<meta property="og:description" content="tornado框架自身没有集成session鉴权，但是对cookie支持良好。由于现在前端vue部署在一个端口上，后端tornado分布式应用部署在多个端口上，这就会导致浏览器的跨域问题产生（url不同，即协议，域名，端口三者有不相同的地方）。 在前后端分离的项目中，由于页面的路由跳转由vue控制，后端应用只提供数据。这样就会使鉴权任务变得较为复杂。一个比较良好的解决思路是，在前端需要鉴权才能访问">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-04T13:01:18.513Z">
-<meta property="article:modified_time" content="2021-01-04T13:01:18.513Z">
+<meta property="article:published_time" content="2021-01-05T02:39:00.000Z">
+<meta property="article:modified_time" content="2021-01-05T02:41:37.713Z">
 <meta property="article:author" content="Echor">
+<meta property="article:tag" content="tornado">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://rebiocoder.github.io/404.html">
+  <link rel="canonical" href="https://rebiocoder.github.io/2021/01/05/tornado%E5%90%8E%E7%AB%AFsession%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E9%89%B4%E6%9D%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Echor" type="application/atom+xml">
   
@@ -291,14 +294,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="page-" class="article article-type-page" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-tornado后端session用户认证鉴权解决方案" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      404 Not Found：该页无法显示
+      tornado后端session用户认证鉴权解决方案
     </h1>
   
 
@@ -306,12 +309,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/404.html" class="article-date">
-	  <time datetime="2021-01-04T13:01:18.513Z" itemprop="datePublished">2021-01-04</time>
+	<a href="/2021/01/05/tornado%E5%90%8E%E7%AB%AFsession%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E9%89%B4%E6%9D%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+	  <time datetime="2021-01-05T02:39:00.000Z" itemprop="datePublished">2021-01-05</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/tornado/" rel="tag">tornado</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -322,21 +335,36 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/404.html#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/01/05/tornado%E5%90%8E%E7%AB%AFsession%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E9%89%B4%E6%9D%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 0(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 661(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <script type="text/javascript" src="//www.qq.com/404/search_children.js" charset="utf-8" homePageUrl="<%- config.url %>" homePageName="回到我的主页"></script>
-
+        <p>tornado框架自身没有集成session鉴权，但是对cookie支持良好。由于现在前端vue部署在一个端口上，后端tornado分布式应用部署在多个端口上，这就会导致浏览器的跨域问题产生（url不同，即协议，域名，端口三者有不相同的地方）。</p>
+<p>在前后端分离的项目中，由于页面的路由跳转由vue控制，后端应用只提供数据。这样就会使鉴权任务变得较为复杂。一个比较良好的解决思路是，在前端需要鉴权才能访问的路由中添加一个后端异步请求，该请求用来判断用户是否登录，这样来判断用户当前是否有权限访问该页面。同时，后端需要    登录才能访问的接口，用修饰器来判断用户当前是否登录。下面提供一种tornado实现session的解决方案。<br>在新建一个HTTP请求时，需要初始化一个session类，该类应该实现以下功能：</p>
+<ol>
+<li><p>能够从请求头的cookie中得到session_id；</p>
+</li>
+<li><p>能够生成一个全新的session_id，并将其返回给client；</p>
+</li>
+<li><p>若server得到的session_id失效，则清空client的cookie；</p>
+</li>
+<li><p>若server得到的sess_id有效，则从redis中取出对应的用户信息</p>
+</li>
+</ol>
+<p>在一个HTTP请求结束时，需要判断，当前这个链接是否为”登录成功“的API，如果是，则需要将对应的用户信息存储到redis中，并生成一个新的session_id返回给用户。</p>
+<p>代码如下：<br>BaseHandler</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class BaseHandler(web.RequestHandler):</span><br><span class="line">    def initialize(self):</span><br><span class="line">        self.session_save_tag &#x3D; False</span><br><span class="line">        self.session &#x3D; None</span><br><span class="line"></span><br><span class="line">    async def prepare(self):</span><br><span class="line">        await self.init_session()</span><br><span class="line">        if get_config().session[&#39;session_key_name&#39;] in self.session:</span><br><span class="line">            self.current_user &#x3D; LoginUser(self.session[get_config().session[&#39;session_key_name&#39;]])</span><br><span class="line">    def on_finish(self):</span><br><span class="line">        if self.session is not None and self.session_save_tag:</span><br><span class="line">            get_loop().add_callback(self.session.save)</span><br><span class="line">        get_logger().info(&quot;[一次HTTP请求结束]&quot;)</span><br><span class="line">        async def init_session(self):</span><br><span class="line">        if not self.session:</span><br><span class="line">            self.session &#x3D; Session(self)</span><br><span class="line">            await self.session.init_fetch()</span><br><span class="line">            </span><br><span class="line">    def save_session(self):</span><br><span class="line">        self.session_save_tag &#x3D; True</span><br><span class="line">        self.session.generate_session_id()</span><br><span class="line">        get_logger().info(&quot;【登录】生成session_id结束&quot;)</span><br><span class="line"></span><br><span class="line">    def save_login_user(self, user: dict):</span><br><span class="line">        login_user &#x3D; LoginUser(None)</span><br><span class="line">        login_user[&#39;username&#39;] &#x3D; user.get(&quot;username&quot;, &quot;&quot;)</span><br><span class="line">        login_user[&#39;email&#39;] &#x3D; user.get(&quot;email&quot;, &quot;&quot;)</span><br><span class="line">        login_user[&#39;phone&#39;] &#x3D; user.get(&quot;phone&quot;, &quot;&quot;)</span><br><span class="line">        self.session[get_config().session[&#39;session_key_name&#39;]] &#x3D; login_user</span><br><span class="line">        self.current_user &#x3D; login_user</span><br><span class="line">        self.save_session()</span><br></pre></td></tr></table></figure>
+<p>login API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class LoginHandler(BaseHandler):</span><br><span class="line">    async def post(self):</span><br><span class="line">        try:</span><br><span class="line">            username &#x3D; self.data[&#39;username&#39;]</span><br><span class="line">            password &#x3D; self.data[&#39;password&#39;]</span><br><span class="line">            doc_user &#x3D; await get_one_data(self.mongodb_manager, Config.mongodb_config[&#39;user_info&#39;],</span><br><span class="line">                                          &#123;&#39;username&#39;: username&#125;)</span><br><span class="line">            print(doc_user)</span><br><span class="line">            if doc_user is not None and password &#x3D;&#x3D; doc_user[&#39;password&#39;]:</span><br><span class="line">                self.save_login_user(doc_user)</span><br><span class="line">                get_logger().info(&quot;登录成功,用户信息已经保存&quot;)</span><br><span class="line">        except Exception as e:</span><br><span class="line">            error &#x3D; traceback.format_exc()</span><br><span class="line">            get_logger().error(&quot;login fail[&#123;&#125;]:&#123;&#125;&quot;.format(e, error))</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
@@ -345,7 +373,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://rebiocoder.github.io/404.html" title="404 Not Found：该页无法显示" target="_blank" rel="external">https://rebiocoder.github.io/404.html</a>
+      <a href="https://rebiocoder.github.io/2021/01/05/tornado%E5%90%8E%E7%AB%AFsession%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E9%89%B4%E6%9D%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="tornado后端session用户认证鉴权解决方案" target="_blank" rel="external">https://rebiocoder.github.io/2021/01/05/tornado后端session用户认证鉴权解决方案/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -376,12 +404,28 @@
   </article>
   
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
 
   
 </div>
 
   <nav class="bar bar-footer clearfix" data-stick-bottom>
   <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/01/04/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1%E9%98%85%E8%AF%BB%E5%AD%A6%E4%B9%A0/" title="微服务设计阅读学习"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
   
   <!-- Button trigger modal -->
@@ -502,6 +546,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
