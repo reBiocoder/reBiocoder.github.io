@@ -124,31 +124,6 @@
   </entry>
   
   <entry>
-    <title>离散结构笔记(1)</title>
-    <link href="https://rebiocoder.github.io/2020/02/21/%E7%A6%BB%E6%95%A3%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0-1/"/>
-    <id>https://rebiocoder.github.io/2020/02/21/%E7%A6%BB%E6%95%A3%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0-1/</id>
-    <published>2020-02-21T05:37:00.000Z</published>
-    <updated>2021-01-05T03:54:15.464Z</updated>
-    
-    <content type="html"><![CDATA[<p>命题: 能判断真假的陈述句称为命题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 感叹句,祈使句,疑问句都不是命题  </span><br><span class="line">2. 悖论不是命题  </span><br><span class="line">3.判断结果不能唯一确定的不是命题  </span><br></pre></td></tr></table></figure><p>简单命题: 由一个简单陈述句组成(原子命题,不能再分)</p><p>复合命题: 简单命题 + 联结词</p><p>五种常用的联结词:否定,合取,析取,蕴涵,等价</p><p>否定: 非,并非</p><hr><p>合取</p><p>合取词: “且”</p><p><code>P 且 Q</code></p><p>当且仅当P和Q同时为真</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">P并且Q  </span><br><span class="line">不但P而且Q  </span><br><span class="line">既P又Q  </span><br><span class="line">尽管P还Q  </span><br><span class="line">虽然P但是Q  </span><br></pre></td></tr></table></figure><hr><p>析取</p><p>析取词: 或</p><p>P或Q: 为假,当且仅当P和Q同时为假</p><p>分类: 相容或,排斥或</p><hr><p>蕴涵词<br>如果.. 那么 ..</p>]]></content>
-    
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;命题: 能判断真假的陈述句称为命题&lt;/p&gt;
-&lt;figure class=&quot;highlight angelscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class
-      
-    
-    </summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>tornado与vue.js解决web一对一实时聊天（IM）</title>
     <link href="https://rebiocoder.github.io/2020/02/17/tornado%E4%B8%8Evue-js%E8%A7%A3%E5%86%B3web%E4%B8%80%E5%AF%B9%E4%B8%80%E5%AE%9E%E6%97%B6%E8%81%8A%E5%A4%A9%EF%BC%88IM%EF%BC%89/"/>
     <id>https://rebiocoder.github.io/2020/02/17/tornado%E4%B8%8Evue-js%E8%A7%A3%E5%86%B3web%E4%B8%80%E5%AF%B9%E4%B8%80%E5%AE%9E%E6%97%B6%E8%81%8A%E5%A4%A9%EF%BC%88IM%EF%BC%89/</id>
