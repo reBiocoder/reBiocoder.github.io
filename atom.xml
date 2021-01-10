@@ -6,7 +6,7 @@
   <link href="https://rebiocoder.github.io/atom.xml" rel="self"/>
   
   <link href="https://rebiocoder.github.io/"/>
-  <updated>2021-01-05T08:51:53.009Z</updated>
+  <updated>2021-01-10T13:05:07.889Z</updated>
   <id>https://rebiocoder.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Golang]defer与return的返回顺序问题</title>
+    <link href="https://rebiocoder.github.io/2021/01/10/%E4%BD%86%E6%98%AFSV/"/>
+    <id>https://rebiocoder.github.io/2021/01/10/%E4%BD%86%E6%98%AFSV/</id>
+    <published>2021-01-10T11:45:00.000Z</published>
+    <updated>2021-01-10T13:05:07.889Z</updated>
+    
+    <content type="html"><![CDATA[<p>defer在go中是一个全新的关键字，他的作用在于能够在go函数返回之后，延迟加载defer函数中的内容。这里对defer的作用进行如下测试：</p><ol><li>defer用于延迟加载<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func test2() &#123;</span><br><span class="line">defer func() &#123;</span><br><span class="line">fmt.Printf(&quot;你好，世界！\n&quot;)</span><br><span class="line">&#125;()</span><br><span class="line">fmt.Printf(&quot;哈哈，我在外面\n&quot;)</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">test2()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>输出结果如下：<br><img src="/images/pasted-14.png" alt="upload successful"></li></ol><p>2.函数中有多个defer函数<br>当函数中有多个defer时，从上到下，根据“先进后出”的原则 得到结果。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">func test2() &#123;</span><br><span class="line">defer func() &#123;</span><br><span class="line">fmt.Printf(&quot;你好，世界！\n&quot;)</span><br><span class="line">&#125;()</span><br><span class="line">defer func() &#123;</span><br><span class="line">fmt.Printf(&quot;我是第二个defer函数\n&quot;)</span><br><span class="line">&#125;()</span><br><span class="line">fmt.Printf(&quot;哈哈，我在外面\n&quot;)</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">&#x2F;&#x2F; fmt.Printf(&quot;main函数里的name111: %s\n&quot;, name)</span><br><span class="line">&#x2F;&#x2F; myname :&#x3D; myfunc()</span><br><span class="line">&#x2F;&#x2F; fmt.Println(&quot;main 函数里的myname333: &quot;, myname)</span><br><span class="line">&#x2F;&#x2F; fmt.Printf(&quot;main函数里的name222: %s\n&quot;, name)</span><br><span class="line">&#x2F;&#x2F; fmt.Println(&quot;main 函数里的myname: &quot;, myname)</span><br><span class="line">test2()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-15.png" alt="upload successful"></p><p>3.当defer与return均存在时，return先返回结果，再执行defer中的内容。实验如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var name string &#x3D; &quot;go&quot;</span><br><span class="line"></span><br><span class="line">func myfunc() string &#123;</span><br><span class="line">defer func() &#123;</span><br><span class="line">name &#x3D; &quot;python&quot;</span><br><span class="line">&#125;()</span><br><span class="line">fmt.Printf(&quot;myfunc 函数里的name: %s\n&quot;, name)</span><br><span class="line">return name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">fmt.Printf(&quot;main函数里的name111: %s\n&quot;, name)</span><br><span class="line">myname :&#x3D; myfunc()</span><br><span class="line">fmt.Println(&quot;main 函数里的myname333: &quot;, myname)</span><br><span class="line">fmt.Printf(&quot;main函数里的name222: %s\n&quot;, name)</span><br><span class="line">fmt.Println(&quot;main 函数里的myname: &quot;, myname)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-16.png" alt="upload successful"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;defer在go中是一个全新的关键字，他的作用在于能够在go函数返回之后，延迟加载defer函数中的内容。这里对defer的作用进行如下测试：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;defer用于延迟加载&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;t</summary>
+      
+    
+    
+    
+    <category term="编程语言" scheme="https://rebiocoder.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="Golang" scheme="https://rebiocoder.github.io/tags/Golang/"/>
+    
+  </entry>
   
   <entry>
     <title>[Golang]基础知识</title>
@@ -479,37 +505,6 @@
     
     
     <category term="tornado" scheme="https://rebiocoder.github.io/tags/tornado/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>tornado与vue.js解决web一对一实时聊天（IM）</title>
-    <link href="https://rebiocoder.github.io/2020/02/17/tornado%E4%B8%8Evue-js%E8%A7%A3%E5%86%B3web%E4%B8%80%E5%AF%B9%E4%B8%80%E5%AE%9E%E6%97%B6%E8%81%8A%E5%A4%A9%EF%BC%88IM%EF%BC%89/"/>
-    <id>https://rebiocoder.github.io/2020/02/17/tornado%E4%B8%8Evue-js%E8%A7%A3%E5%86%B3web%E4%B8%80%E5%AF%B9%E4%B8%80%E5%AE%9E%E6%97%B6%E8%81%8A%E5%A4%A9%EF%BC%88IM%EF%BC%89/</id>
-    <published>2020-02-17T13:56:00.000Z</published>
-    <updated>2021-01-05T03:55:11.288Z</updated>
-    
-    <content type="html"><![CDATA[<p>整个小项目最核心的通讯功能能够实现，效果如图：</p><!-- more --><p>整个小项目最核心的通讯功能能够实现，效果如图：</p><p><img src="https://i.loli.net/2020/02/17/2OIB14f9rlW67Xm.png" alt="demo图片"></p><p>demo图片</p><p>记录一下这个阶段遇到的一些问题。</p><p>解决方案：<br>前端vue.js+ajax<br>后端django rest framework + tornado<br>用户鉴权用JWT<br>redis做系统缓存  </p><p>一.前后端鉴权问题</p><p>1.django api鉴权</p><p>django通过鉴定http请求头的Authorization头部，进行鉴权。</p><p><img src="https://i.loli.net/2020/02/17/37ZXfFqpPexV9O8.png" alt="AZ9Y5E6OHP_HC_O0ZYNF_HS.png"></p><p>AZ9Y5E6OHP_HC_O0ZYNF_HS.png</p><p>当收到请求时，主要是以下方面的问题：</p><ul><li>  该token是否真实有效</li><li>  该token所代表的用户是否为唯一登录</li><li>  该token还有多久将会失效，若即将失效，则刷新token，同时要防止并发时，多次重复刷新</li></ul><p><strong>解决思路</strong></p><p>对token发放的后端接口进行拦截，将<code>/new_token</code>得到的新token存入redis中，将/refresh_token得到的刷新token也存入redis中。 当得到一个带有Authorizaion请求头的请求时，首先通过decode该token，得到username和user_id（注意这里无论token是否失效都可以解码出来基本信息）,然后在redis中查询only_key，这里实际上就解决了1，2两个问题。 刷新token的问题，没有找到特别好的解决方案，采用的是，在redis中存储一个refresh_token，如果已经刷新，则不再刷新（防止重复刷新）。</p><p>2 . tornado api鉴权</p><p>tornado中没有django中中间件的概念，通过python的修饰器来进行鉴权，与django鉴权相同。</p><p>3.vue.js鉴权</p><p>采用<code>router.beforeEach</code>进行全局验证，需要验证的页面在<code>meta</code>中添加<code>requiresAuth</code>字段。</p><p>4.axios鉴权</p><p>新建一个<code>api.js</code>，<code>create</code>一个axios实例，在axios的拦截器中添加请求头<code>Authorization</code>。 所以api请求同一存放在api.js中，在组件中使用时，调用相关promise函数。由于axios是异步的，所以在long pool时，容易出现超时中断的情况。这里我不得不在vue中引入了jquery，用ajax做长轮询。（有好的解决方案也可以交流）</p><p>5.由于浏览器的限制，ajax请求容易出现cors，跨域请求失败。 在django中可以直接安装第三方组件来解决，在tornado中不行。 当请求方式为get和部分post时是不会出现cors错误的，但是当post，dataType为json时，这时为非简单请求中的一种，浏览器会自动发送一个options进行嗅探，查看server是否支持该ip的请求，在tornado中设置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">self.set\_header(&#39;Access-Control-Allow-Origin&#39;, &#39;http:&#x2F;&#x2F;172.20.10.3:8080&#39;)  </span><br><span class="line">self.set\_header(&#39;Access-Control-Allow-Credentials&#39;, True)  </span><br><span class="line">self.set\_header(&#39;Access-Control-Allow-Headers&#39;,  </span><br><span class="line"> &#39;Origin, X-Requested-With, Content-Type, Accept, Authorization, athorization&#39;)  </span><br><span class="line">self.set\_header(&#39;Access-Control-Allow-Methods&#39;, &#39;POST, GET, PUT, DELETE&#39;)  &#96;&#96;&#96;</span><br><span class="line"></span><br><span class="line">&#96;Access-Control-Allow-Origin&#96;中为前端ip+端口号，表示同意该ip的非简单请求。</span><br><span class="line"></span><br><span class="line">二. tornado处理实时聊天消息</span><br><span class="line"></span><br><span class="line">处理实时的信息，django自己的一套并不好用，&#96;django-channels&#96;加websocket虽然能实现简单的实时通信，但是效果并不好。tornado是一个异步web框架，处理实时消息，作为django的一个组件（这里说的并不准确，因为tornado的服务器是生产级服务器，可以直接生产部署，再加nginx反向代理，性能十分优越）。参考tornado中ajax聊天室demo（facebook工程师的demo，很值得读，编码规范也可以学习），使用redis做缓存在处理单对单的消息收发。</span><br><span class="line"></span><br><span class="line">三。django与tornado的结合部署</span><br><span class="line"></span><br><span class="line">官网文档有相关的例子，wsgi的结合部署，使用的是tornado的服务器。主要代码如下：</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>wsgi_app = wsgi.WSGIContainer(<br> django.core.handlers.wsgi.WSGIHandler())<br>tornado_app = tornado.web.Application(<br> [<br> (‘/api/v1/all-message/‘, ChatCacheApi.IndexMessageHandler),<br> (‘/api/v1/new-message/‘, ChatCacheApi.NewMessageHandler),<br> (‘/api/v1/update-message/‘, ChatCacheApi.UpdateMessageHandler),<br> (‘.*‘, tornado.web.FallbackHandler, dict(fallback=wsgi_app)),<br> ])<br>server = tornado.httpserver.HTTPServer(tornado_app)<br>server.listen(options.options.port, ‘0.0.0.0’)<br>tornado.ioloop.IOLoop.current().start()  </p><p>```</p><p><img src="https://i.loli.net/2020/02/17/p96VXecZfD25FwJ.png" alt="13_6AV_3_X1H_M5F82D2_P5.png"></p><p>响应时，将会使用tornado server。</p><hr><p>主要时记录一下思路，具有实现有点麻烦，有需要再记录。</p>]]></content>
-    
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;整个小项目最核心的通讯功能能够实现，效果如图：&lt;/p&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;over
-      
-    
-    </summary>
-    
-    
-    
-    
-    <category term="tornado" scheme="https://rebiocoder.github.io/tags/tornado/"/>
-    
-    <category term="python" scheme="https://rebiocoder.github.io/tags/python/"/>
     
   </entry>
   
