@@ -17,24 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>微服务设计阅读学习 | Echor的博客</title>
-  <meta name="description" content="微服务的概念网上都有，各种博客都有解释。但是自己没有上手写代码，没有做工程项目，实际上是很难体会的。 微服务与SOA（面向服务的架构）的区别主要在于微服务中每个服务是一个独立的进程，它能够被独立的部署。若该服务宕机，并不影响整个系统中其他服务的正常运行。 在开始尝试做一个新的系统时，若常用微服务的方式，则需要使用限界上下文划分微服务边界。限界上下文指的是一个由显式边界限定的特定职责。如果你想要从一">
+  <title>[golang] android应用中websocket的处理 | Echor的博客</title>
+  <meta name="description" content="最近在学习golang，完成了一个聊天app，效果如下： 整个项目后端基于golang，主要通过websocket来实现。根据websocket的协议，在socket连接之后需要进行ping-pong发包，ping-pong应该由服务器自己实现，无需客户端的参与，用来保证websocket连接的正常，下面我们用golang来实现一下。首先构建如下测试项目结构： 12345678.├── go.mo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微服务设计阅读学习">
-<meta property="og:url" content="https://rebiocoder.github.io/2021/01/04/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1%E9%98%85%E8%AF%BB%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:title" content="[golang] android应用中websocket的处理">
+<meta property="og:url" content="https://rebiocoder.github.io/2021/02/20/Untitled/index.html">
 <meta property="og:site_name" content="Echor">
-<meta property="og:description" content="微服务的概念网上都有，各种博客都有解释。但是自己没有上手写代码，没有做工程项目，实际上是很难体会的。 微服务与SOA（面向服务的架构）的区别主要在于微服务中每个服务是一个独立的进程，它能够被独立的部署。若该服务宕机，并不影响整个系统中其他服务的正常运行。 在开始尝试做一个新的系统时，若常用微服务的方式，则需要使用限界上下文划分微服务边界。限界上下文指的是一个由显式边界限定的特定职责。如果你想要从一">
+<meta property="og:description" content="最近在学习golang，完成了一个聊天app，效果如下： 整个项目后端基于golang，主要通过websocket来实现。根据websocket的协议，在socket连接之后需要进行ping-pong发包，ping-pong应该由服务器自己实现，无需客户端的参与，用来保证websocket连接的正常，下面我们用golang来实现一下。首先构建如下测试项目结构： 12345678.├── go.mo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://rebiocoder.github.io/images/pasted-8.png">
-<meta property="og:image" content="https://rebiocoder.github.io/images/pasted-9.png">
-<meta property="og:image" content="https://rebiocoder.github.io/images/pasted-10.png">
-<meta property="article:published_time" content="2021-01-04T14:09:00.000Z">
-<meta property="article:modified_time" content="2021-01-04T14:11:26.166Z">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/U95f548f8ca494767b3d93c5a6012fa72G.jpg">
+<meta property="article:published_time" content="2021-02-20T12:31:00.000Z">
+<meta property="article:modified_time" content="2021-02-20T12:38:56.771Z">
 <meta property="article:author" content="Echor">
+<meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://rebiocoder.github.io/images/pasted-8.png">
+<meta name="twitter:image" content="https://ae01.alicdn.com/kf/U95f548f8ca494767b3d93c5a6012fa72G.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://rebiocoder.github.io/2021/01/04/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1%E9%98%85%E8%AF%BB%E5%AD%A6%E4%B9%A0/index.html">
+  <link rel="canonical" href="https://rebiocoder.github.io/2021/02/20/Untitled/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Echor" type="application/atom+xml">
   
@@ -377,14 +376,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-微服务设计阅读学习" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Untitled" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      微服务设计阅读学习
+      [golang] android应用中websocket的处理
     </h1>
   
 
@@ -392,17 +391,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/01/04/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1%E9%98%85%E8%AF%BB%E5%AD%A6%E4%B9%A0/" class="article-date">
-	  <time datetime="2021-01-04T14:09:00.000Z" itemprop="datePublished">2021-01-04</time>
+	<a href="/2021/02/20/Untitled/" class="article-date">
+	  <time datetime="2021-02-20T12:31:00.000Z" itemprop="datePublished">2021-02-20</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a>
+    <a class="article-category-link" href="/categories/golang/">golang</a>
   </span>
 
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/golang/" rel="tag">golang</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -413,10 +417,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/01/04/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1%E9%98%85%E8%AF%BB%E5%AD%A6%E4%B9%A0/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/02/20/Untitled/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.6k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.1k(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
@@ -426,18 +430,33 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>微服务的概念网上都有，各种博客都有解释。但是自己没有上手写代码，没有做工程项目，实际上是很难体会的。 微服务与SOA（面向服务的架构）的区别主要在于微服务中每个服务是一个独立的进程，它能够被独立的部署。若该服务宕机，并不影响整个系统中其他服务的正常运行。</p>
-<p>在开始尝试做一个新的系统时，若常用微服务的方式，则需要使用限界上下文划分微服务边界。限界上下文指的是一个由显式边界限定的特定职责。如果你想要从一个限界上下文中获取信息，或者向其发起请求，需要使用模型和它的显式边界进行通信。实际上寻找限界上下文边界就是将整个业务逻辑进行一个粗粒度的划分。对于一个新系统而言，过早划分很容易错误判断服务之间的边界，按照书中内容所说，很多时候，将一个已有的代码库划分成微服务，要比从头开始构建微服务简单得多。</p>
-<p>当你在思考组织内的限界上下文时，不应该从共享数据的角度来考虑，而应该从这些上下文能够提供的功能来考虑。服务与服务之间如果能够做到低耦合，高内聚，那么这就是一个好的微服务系统。实际上，要做到低耦合，高内聚还是很困难的，在工程项目中很可能遇到一份代码需要多次拷贝使用，当遇到这种情况时，就需要注意DRY（don’t repeat yourself）。应该考虑使用更好的设计模式来避免这种情况，因为很容易出现，一个地方被修改了，但是另一个地方忘记修改的情况。</p>
-<p>服务集成是微服务相关技术中最重要的一个问题，按照作者的话来说：做得好的话，你的微服务可以保持自治性，你也可以独立地修改和发布它们；但做得不好的话会带来灾难。在选择集成方式时，需要注意以下几个原则：1.避免破坏性修改 2. 保证API的技术无关系3.使你的服务易于消费方使用4.隐藏内部实现细节。服务之间的通信可以分为同步和异步两种：如果使用同步通信，发起一个远程服务调用后，调用方会阻塞自己并等待整个操作的完成。如果使用异步通信，调用方不需要等待操作完成就可以返回，甚至可能不需要关心这个操作完成与否。这两种不同的通信模式有着各自的协作风格，即请求/响应或者基于事件。对于请求/响应来说，客户端发起一个请求，然后等待响应。这种模式能够与同步通信模式很好地匹配，但异步通信也可以使用这种模式。我可以发起一个请求，然后注册一个回调，当服务端操作结束之后，会调用该回调。对于使用基于事件的协作方式来说，情况会颠倒过来。客户端不是发起请求，而是发布一个事件，然后期待其他的协作者接收到该消息，并且知道该怎么做。</p>
-<p>服务与服务之间常见有两种常见的架构风格：编排与协同。</p>
-<p><img src="/images/pasted-8.png" alt="upload successful"></p>
-<p> 对于上图用户注册这样一个业务逻辑，如果用编排的风格来设计服务，我们可以得到如下的架构图：</p>
-<p><img src="/images/pasted-9.png" alt="upload successful"><br>很显然，若编排的架构使用的是同步通信的机制，即请求/响应的协作方式，那么我们能够得到每一个服务返回的结果。当然，编排的架构也能使用基于回调的异步通信。编排架构的缺点在于，客户服务承担了太多的职责，而剩下的三个服务按作者的话来说：会成为贫血的CRUD服务。</p>
-<p>如果采用协同的架构风格，我们可以得到下面这个架构图：</p>
-<p><img src="/images/pasted-10.png" alt="upload successful"></p>
-<p>可以仅仅从客户服务中使用异步的方式触发一个事件，该事件名可以叫作“客户创建”。电子邮件服务、邮政服务及积分账户可以简单地订阅这些事件并且做相应处理，如上图所示，这种方法能够显著地消除耦合。使用协同的方式组织服务，很显然必定是异步的。使用这种发布-订阅的模式，是当前非常流行的一种通信模式，典型的就是消息队列，比如RabbitMQ。这种模式能够很大程度的在服务之间进行解耦，但是它的一个问题在于无法检测服务是否成功执行，比如电子邮件服务出现问题，无法发送邮件，此时整个系统是否能够检测到该问题，并进行处理。一个常见的解决方案是构建一个与业务逻辑流程图相匹配的监控系统。实际的监控活动是针对每个服务的，但最终需要把监控的结果映射到业务流程中。针对请求响应的协同方式，常用有两种技术：RPC和REST（表征性状态转移）风格的HTTP。针对基于事件的协同方式，一般采用消息队列来实现。</p>
-<p>微服务的部署相对于单体应用来说，也是一个较为复杂的问题。CI/CD（持续集成/持续部署）是当前非常重要的一种思想。按照书中所说，判断你的项目是否CI，可以通过回答一下几个问题来判断：1.你是否每天签入代码到主线？2.你是否有一组测试来验证修改？3.当构建失败后，团队是否把修复CI当作第一优先级的事情来做？我个人感觉CI/CD应该是用来解决开发和运维之间的矛盾，应该需要一个DevOps系统来实现这种思想。</p>
+        <p>最近在学习golang，完成了一个聊天app，效果如下：<br><img src="https://ae01.alicdn.com/kf/U95f548f8ca494767b3d93c5a6012fa72G.jpg"></p>
+<p>整个项目后端基于golang，主要通过websocket来实现。根据websocket的协议，在socket连接之后需要进行ping-pong发包，ping-pong应该由服务器自己实现，无需客户端的参与，用来保证websocket连接的正常，下面我们用golang来实现一下。<br>首先构建如下测试项目结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── go.mod</span><br><span class="line">├── go.sum</span><br><span class="line">├── main</span><br><span class="line">├── main.go</span><br><span class="line">├── model.go</span><br><span class="line">├── session.go</span><br><span class="line">└── websock_hdl.go</span><br></pre></td></tr></table></figure>
+<p>在main.go中构建一个http服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">  &quot;net&#x2F;http&quot;</span><br><span class="line">)</span><br><span class="line">var global struct &#123;</span><br><span class="line">  Store *SessionStore</span><br><span class="line">&#125;</span><br><span class="line">func main() &#123;</span><br><span class="line">  server :&#x3D; http.NewServeMux()</span><br><span class="line">  global.Store &#x3D; &amp;SessionStore&#123;</span><br><span class="line">    sessCache: make(map[string]*Session),</span><br><span class="line">  &#125;</span><br><span class="line">  server.HandleFunc(&quot;&#x2F;ws&quot;, WebsocketHandler)</span><br><span class="line">  http.ListenAndServe(&quot;:6060&quot;, server)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在session.go中需要实现两个goroutine，一个readLoop用来监听客户端发给server的信息，一个writeLoop用来监听服务端发给客户端的信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; WriteLoop is loop</span><br><span class="line">func (sess *Session) writeLoop() &#123;</span><br><span class="line">  ticker :&#x3D; time.NewTicker((time.Second * 10 * 9) &#x2F; 10)</span><br><span class="line">  defer func() &#123;</span><br><span class="line">    ticker.Stop()</span><br><span class="line">    sess.closeWS()</span><br><span class="line">  &#125;()</span><br><span class="line">  for &#123;</span><br><span class="line">    select &#123;</span><br><span class="line">    case msg, ok :&#x3D; &lt;-sess.send:</span><br><span class="line"></span><br><span class="line">      fmt.Println(&quot;发送消息&quot;, msg)</span><br><span class="line">    case &lt;-ticker.C:</span><br><span class="line">      sess.ws.SetWriteDeadline(time.Now().Add(time.Second * 1))</span><br><span class="line">      if err :&#x3D; sess.ws.WriteMessage(websocket.PingMessage, nil); err !&#x3D; nil &#123;</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (sess *Session) readLoop() &#123;</span><br><span class="line">  defer func() &#123;</span><br><span class="line">    sess.closeWS()</span><br><span class="line">  &#125;()</span><br><span class="line">  sess.ws.SetReadLimit(1024)</span><br><span class="line">  sess.ws.SetReadDeadline(time.Now().Add(time.Second * 10))</span><br><span class="line">  sess.ws.SetPongHandler(func(appData string) error &#123;</span><br><span class="line">    fmt.Println(&quot;客户端返回pong包&quot;, appData)</span><br><span class="line">    sess.ws.SetReadDeadline(time.Now().Add(time.Second * 10))</span><br><span class="line">    return nil</span><br><span class="line">  &#125;)</span><br><span class="line">  for &#123;</span><br><span class="line">    _, raw, err :&#x3D; sess.ws.ReadMessage()</span><br><span class="line">    fmt.Println(&quot;收到客户端消息内容&quot;, string(raw))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在writeLoop中需要定义一个NewTicker，它的作用是每间隔一段固定的时间，将当前的时间发送到channel ticker.C中，这样我们可以通过监听该通道，用来在固定时间内向客户端发送一个ping消息。当websocket收到ping消息之后在readLoop中实现setPongHandler函数，用来向server返回一个事件，用来表示当前客户端连接并未断开。这个事件就是SetReadDeadline这个事件，它用来表示该websocket在几秒之后会失效（当超过该时间后会使websocket断开）。所以pong处理时需要更新websocket的ReadDeadline的时间，保证socket的长期连接。</p>
+<p>在webcok_hdl.go中将http请求升级成websocket：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">type Student struct &#123;</span><br><span class="line">  Name  string &#96;json:&quot;name&quot;&#96;</span><br><span class="line">  Age   int16  &#96;json:&quot;age&quot;&#96;</span><br><span class="line">  Class *Class &#96;json:&quot;class&quot;&#96;</span><br><span class="line">&#125;</span><br><span class="line">type Class struct &#123;</span><br><span class="line">  StudyNumber string &#96;json:&quot;studyNumber&quot;&#96;</span><br><span class="line">  Number      int16  &#96;json:&quot;number&quot;&#96;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; WebsocketHandler 处理socket链接</span><br><span class="line">func WebsocketHandler(w http.ResponseWriter, r *http.Request) &#123;</span><br><span class="line">  &#x2F;&#x2F;升级http请求</span><br><span class="line">  var upgrader &#x3D; websocket.Upgrader&#123;</span><br><span class="line">    CheckOrigin: func(r *http.Request) bool &#123;</span><br><span class="line">      return true</span><br><span class="line">    &#125;,</span><br><span class="line">    ReadBufferSize:  1024,</span><br><span class="line">    WriteBufferSize: 1024,</span><br><span class="line">  &#125;</span><br><span class="line">  websock, err :&#x3D; upgrader.Upgrade(w, r, nil)</span><br><span class="line">  if err !&#x3D; nil &#123;</span><br><span class="line">    fmt.Println(&quot;Error&quot;, err)</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  var sess *Session &#x3D; global.Store.NewSession(websock)</span><br><span class="line">  fmt.Println(&quot;ws: 开始websocket监听&quot;)</span><br><span class="line">  go sess.writeLoop()</span><br><span class="line">  go sess.readLoop()</span><br><span class="line">  js, _ :&#x3D; json.Marshal(&amp;Student&#123;</span><br><span class="line">    Name: &quot;abc&quot;,</span><br><span class="line">    Age:  18,</span><br><span class="line">    Class: &amp;Class&#123;</span><br><span class="line">      StudyNumber: &quot;2016221097121&quot;,</span><br><span class="line">      Number:      189,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br><span class="line">  sess.send &lt;- js</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：在golang中函数与方法是有区别的，一个函数可以拥有自己的方法，一个方法会有自己的接受者，这与传统的面向对象的语言不同。所以我们可能会看见一些奇怪的使用方法，比如定义一个函数类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type HandlerFunc func(ResponseWriter, *Request)</span><br></pre></td></tr></table></figure>
+<p>定义一个Hnadler接口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type Handler interface &#123;</span><br><span class="line">    ServeHTTP(ResponseWriter, *Request)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>给HandlerFunc函数类型实现Handler接口中的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) &#123;</span><br><span class="line">    f(w, r)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在golang的net/http内置包中的HandlerFunc函数（用来将路由映射到视图函数）就运用了上述的技巧，使你能够将任意命名的函数只要参数是<code>(ResponseWriter,*Resquest)</code>，就均能作为视图函数，来处理路由。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.HandleFunc(&quot;&#x2F;ws&quot;, WebsocketHandler)</span><br></pre></td></tr></table></figure>
+<p>在源码中跟踪上述函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">func HandleFunc(pattern string, handler func(ResponseWriter, *Request)) &#123;</span><br><span class="line">    mux.Handle(pattern, HandlerFunc(handler))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>HandleFunc</code>中调用了<code>Handle</code>函数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func (mux *ServeMux) Handle(pattern string, handler Handler)</span><br></pre></td></tr></table></figure>
+<p><code>Handle</code>函数的第二个参数应该是一个Handle接口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">type Handler interface &#123;</span><br><span class="line">  ServeHTTP(ResponseWriter, *Request)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意在<code>Handle</code>函数中，第二个参数使用了一个HandlerFunc函数（多一个r），这个函数的定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">type HandlerFunc func(ResponseWriter, *Request)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; ServeHTTP calls f(w, r).</span><br><span class="line">func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) &#123;</span><br><span class="line">  f(w, r)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可见，这里的<code>HandlerFunc(handler))</code>可以理解为强制类型转化，将handler函数强制转化为Handler接口，这样就能够实现上述功能。</p>
 
       
     </div>
@@ -447,7 +466,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://rebiocoder.github.io/2021/01/04/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1%E9%98%85%E8%AF%BB%E5%AD%A6%E4%B9%A0/" title="微服务设计阅读学习" target="_blank" rel="external">https://rebiocoder.github.io/2021/01/04/微服务设计阅读学习/</a>
+      <a href="https://rebiocoder.github.io/2021/02/20/Untitled/" title="[golang] android应用中websocket的处理" target="_blank" rel="external">https://rebiocoder.github.io/2021/02/20/Untitled/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -493,13 +512,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/01/05/tornado%E5%90%8E%E7%AB%AFsession%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E9%89%B4%E6%9D%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="tornado后端session用户认证鉴权解决方案"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/01/04/unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%EF%BC%9A%E9%AB%98%E7%BA%A7I-O%E7%90%86%E8%A7%A3/" title="unix环境高级编程：高级I/O理解"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/01/10/%E4%BD%86%E6%98%AFSV/" title="[Golang]defer与return的返回顺序问题"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
